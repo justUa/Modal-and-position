@@ -5,6 +5,7 @@
     --accent-color: #4985FF;
     --accent-dark-color: #5F12D0;
     --main-light-color: #F6F6F8;
+    --second-color: #757575;
 }
 
 body {
@@ -419,7 +420,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 
 .backdrop {
@@ -481,9 +481,97 @@ h2 {
 .modal-btn:hover::before {
     transform: rotate(-45deg);
 }
-
+/* 
 .is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+} */
+
+.form-input {
+    margin-bottom: 10px;
+    position: relative;
 }
+
+.form-input .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+}
+
+.form textarea,
+.form-input input {
+    padding: 5px;
+    width: 100%;
+    color: var(--second-color);
+}
+
+.form textarea,
+.form-input {
+    margin-top: 5px;
+}
+
+.form-input input {
+    padding-left: 30px;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .form-check {
+    color: var(--dark-color);
+    border: 3px solid var(--dark-color);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+
+  .form-privacy {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  .form-privacy input:checked + .form-check {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+
+  .form-privacy a {
+    color: var(--accent-color);
+    transition: color ease 0.3s;
+  }
+
+  .form-privacy a:hover {
+    color: var(--accent-dark-color);
+  }
+
+  .form-check {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 2px;
+  }
+  
+  .form-check .icon {
+    position: absolute;
+  }
